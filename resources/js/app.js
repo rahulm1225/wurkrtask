@@ -21,10 +21,8 @@ Vue.use(require('vue-resource'));
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('chat-component', require('./components/ChatComponent.vue').default);
-Vue.component('user-component', require('./components/UserComponent.vue').default);
 Vue.component('chat-messages-component', require('./components/ChatMessagesComponent.vue').default);
 Vue.component('message-component', require('./components/MessageComponent.vue').default);
-Vue.component('filter-component', require('./components/FilterComponent.vue').default);
 Vue.component('InfiniteLoading', require('vue-infinite-loading'));
 
 /**

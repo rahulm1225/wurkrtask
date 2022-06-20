@@ -6,15 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\MessageResource;
 use App\Models\Message;
 use Illuminate\Http\Request;
-use EllipseSynergie\ApiResponse\Contracts\Response;
 
 class MessageController extends Controller
 {
-    public function __construct(Response $response)
-    {
-        $this->response = $response;
-    }
-
     public function index()
     {
         try {
@@ -42,7 +36,7 @@ class MessageController extends Controller
         } catch (ModelNotFoundException $exception) {
             return back()->withError($exception->getMessage())->withInput();
         }
-        
+
         return response()->json($messages);
     }
 }
